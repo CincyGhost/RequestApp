@@ -1,0 +1,136 @@
+﻿@page "/Details/{Id}"
+@inject IRequestData requestData
+@inject IUserData userData
+@inject IStatusData statusData
+@inject NavigationManager navManager
+@inject AuthenticationStateProvider authProvider
+
+
+
+<h1 class="page-heading text-uppercase mb-4">Request Details</h1>
+
+<div class="row justify-content-center detail-form">
+    <div class="col-xl-8 col-lg-10 form-layout">
+        @if(request is not null)
+        {
+            <div class="row request-detail-row">
+                <div class="col-11 request-detail">
+                    <div>
+                        <div class="@GetVoteClass()" @onclick="VoteUp">
+                            <div class="text-uppercase">@GetUpvoteTopText()</div>
+                            <span class="oi oi-caret-top detail-upvote"></span>
+                            <div class="text-uppercase">@GetUpvoteBottomText()</div>
+                        </div>
+                        <div class="request-detail-date">
+                            <div>@request.DateCreated.ToString("MM.dd.yyyy")</div>
+                        </div>
+                    </div>
+                    <div class="request-detail-text">
+                        <div class="fw-bold mb-2 request-detail-request">@request.Request</div>
+                        <div class="mb-2 request-detail-author">@request.Author.DisplayName</div>
+                        <div class="mb-2 d-none d-md-block">@request.Description</div>
+                        <div class="request-entry-text-category d-none d-md-block">
+                            @request.Category.CategoryName
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 close-button-section">
+                    <button class="btn btn-close" @onclick="ClosePage"></button>
+                </div>
+            </div>
+            <div class="row d-block d-md-none">
+                <div class="request-detail-text">
+                    <div>@request.Description</div>
+                    <div class="request-entry-text-category">@request.Category.CategoryName</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@if (request?.RequestStatus is not null)
+{
+    <div class="row justify-content-center detail-form">
+        <div class="col-xl-8 col-lg-10 request-results form-layout">
+            <div class="@GetStatusClass()"></div>
+            <div class="request-detail-status-section">
+                <div class="request-detail-status fw-bold mb-2 request-detail-request">
+                    @request.RequestStatus.StatusName
+                </div>
+                <div class="request-detail-owner-notes">
+                    @((MarkupString)request.OwnerNotes)
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (request is not null)
+{
+    <AuthorizeView Policy="Admin">
+        <div class="row justify-content-center detail-form">
+            <div class="col-xl-8 col-lg-10 form-layout admin-details">
+                <div>
+                    <div class="request-detail-status fw-b mb-2 request-detail-request">
+                        Set Status
+                    </div>
+                    @if (string.IsNullOrWhiteSpace(settingStatus))
+                    {
+                        <div class="admin-set-statuses">
+                            <button @onclick='(() => settingStatus = "completed")'
+                                class="btn request-entry-text-category btn-archive btn-status-completed">
+                                completed
+                            </button>
+                            <button @onclick='(() => settingStatus = "watching")'
+                                class="btn request-entry-text-category btn-archive btn-status-watching">
+                                watching
+                            </button>
+                            <button @onclick='(() => settingStatus = "upcoming")'
+                                class="btn request-entry-text-category btn-archive btn-status-upcoming">
+                                upcoming
+                            </button>
+                            <button @onclick='(() => settingStatus = "dismissed")'
+                                class="btn request-entry-text-category btn-archive btn-status-dismissed">
+                                dismissed
+                            </button>
+                        </div>
+                    }
+                    else if (settingStatus == "completed")
+                    {
+                        <div>
+                            <input @bind="urlText" class="form-control rounded-control" type="text"
+                                placeholder="Url" aria-label="Content Url" />
+                        </div>
+                        <div class="request-entry-bottom">
+                            <button class="btn btn-archive-confirm"
+                                @onclick="CompleteSetStatus">
+                                confirm
+                            </button>
+                            <button class="btn btn-archive-reject"
+                                @onclick="(() => settingStatus = null)">
+                                cancel
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="request-entry-bottom">
+                            <button class="btn btn-archive-confirm"
+                                @onclick="CompleteSetStatus">
+                                confirm
+                            </button>
+                            <button class="btn btn-archive-reject"
+                                @onclick="(() => settingStatus = null)">
+                                cancel
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </AuthorizeView>
+}
+
+    
+
+

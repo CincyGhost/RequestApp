@@ -1,0 +1,215 @@
+﻿@page "/SampleData"
+@inject ICategoryData categoryData
+@inject IStatusData statusData
+@inject IUserData userData
+@inject IRequestData requestData
+
+
+<h3>SampleData</h3>
+
+@if (categoriesCreated)
+{
+    <h4>Categories have been created</h4>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="CreateCategories">CreateCategories</button>
+}
+
+@if (statusesCreated)
+{
+    <h4>Statuses have been created</h4>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="CreateStatuses">CreateStatuses</button>
+}
+
+<button class="btn btn-danger" @onclick="GenerateSampleData">Generate Sample Data</button>
+
+
+
+
+@code {
+    private bool categoriesCreated = false;
+    private bool statusesCreated = false;
+
+    private async Task GenerateSampleData()
+    {
+        UserModel user = new()
+            {
+                FirstName = "Will",
+                LastName = "McRob",
+                EmailAddress = "wamcroberts2@gmail.com",
+                DisplayName = "CincyGhost",
+                ObjectIdentifier = "abc-123"
+            };
+
+        await userData.CreateUser(user);
+
+        var foundUser = await userData.GetUserFromAuthentication("abc-123");
+        var categories = await categoryData.GetAllCategories();
+        var statuses = await statusData.GetAllStatuses();
+
+        HashSet<string> votes = new();
+        votes.Add("1");
+        votes.Add("2");
+        votes.Add("3");
+
+        RequestModel request = new()
+            {
+                Author = new BasicUserModel(foundUser),
+                Category = categories[0],
+                Request = "Our first request.",
+                Description = "This is a request created by the sample data generation method."
+            };
+
+        await requestData.CreateRequest(request);
+
+        request = new()
+            {
+                Author = new BasicUserModel(foundUser),
+                Category = categories[1],
+                Request = "Our second request.",
+                Description = "This is a request created by the sample data generation method.",
+                RequestStatus = statuses[0],
+                OwnerNotes = "This is the note for the sample request."
+            };
+
+        await requestData.CreateRequest(request);
+
+        request = new()
+            {
+                Author = new BasicUserModel(foundUser),
+                Category = categories[2],
+                Request = "Our third request.",
+                Description = "This is a request created by the sample data generation method.",
+                RequestStatus = statuses[1],
+                OwnerNotes = "This is the note for the status."
+            };
+
+        await requestData.CreateRequest(request);
+
+        request = new()
+            {
+                Author = new BasicUserModel(foundUser),
+                Category = categories[3],
+                Request = "Our fourth request.",
+                Description = "This is a request created by the sample data generation method.",
+                RequestStatus = statuses[2],
+                UserVotes = votes,
+                OwnerNotes = "This is the note for the status."
+            };
+
+        await requestData.CreateRequest(request);
+
+        votes.Add("4");
+
+        request = new()
+            {
+                Author = new BasicUserModel(foundUser),
+                Category = categories[4],
+                Request = "Our fifth request.",
+                Description = "This is a request created by the sample data generation method.",
+                RequestStatus = statuses[3],
+                UserVotes = votes,
+                OwnerNotes = "This is the note for the status."
+            };
+
+        await requestData.CreateRequest(request);
+
+    }
+
+    private async Task CreateCategories()
+    {
+        var categories = await categoryData.GetAllCategories();
+        if (categories?.Count > 0)
+        {
+            return;
+        }
+
+        CategoryModel category = new()
+            {
+                CategoryName = "Web App Ideas",
+                CategoryDescription = "Your ideas for a web application."
+            };
+        await categoryData.CreateCategory(category);
+
+        category = new()
+            {
+                CategoryName = "Desktop App Ideas",
+                CategoryDescription = "Your ideas for a desktop application."
+            };
+        await categoryData.CreateCategory(category);
+
+        category = new()
+            {
+                CategoryName = "EVM Dapp Ideas",
+                CategoryDescription = "Your ideas for a decentralized application on an EVM blockchain (Solidity)."
+            };
+        await categoryData.CreateCategory(category);
+
+        category = new()
+            {
+                CategoryName = "Mobile App Ideas",
+                CategoryDescription = "Your ideas for an Android or IOS application."
+            };
+        await categoryData.CreateCategory(category);
+
+        category = new()
+            {
+                CategoryName = "Features",
+                CategoryDescription = "Features you would like to see added to an existing application."
+            };
+        await categoryData.CreateCategory(category);
+
+        category = new()
+            {
+                CategoryName = "Other",
+                CategoryDescription = "Random requests."
+            };
+        await categoryData.CreateCategory(category);
+
+        categoriesCreated = true;
+    }
+
+    private async Task CreateStatuses()
+    {
+        var statuses = await statusData.GetAllStatuses();
+
+        if (statuses?.Count > 0)
+        {
+            return;
+        }
+
+        StatusModel status = new()
+            {
+                StatusName = "Completed",
+                StatusDescription = "The request was accepted and the corresponding item or feature was created."
+            };
+        await statusData.CreateStatus(status);
+
+        status = new()
+            {
+                StatusName = "Watching",// Was Under Review
+                StatusDescription = "The request is valid and is being reviewed to see if the community is interested."
+            };
+        await statusData.CreateStatus(status);
+
+        status = new()
+            {
+                StatusName = "Upcoming",
+                StatusDescription = "The request was accepted and is being developed."
+            };
+        await statusData.CreateStatus(status);
+
+        status = new()
+            {
+                StatusName = "Dismissed",
+                StatusDescription = "The request was denied."
+            };
+        await statusData.CreateStatus(status);
+
+        statusesCreated = true;
+    }
+}

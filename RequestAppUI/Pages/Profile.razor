@@ -1,0 +1,179 @@
+﻿@page "/Profile"
+@attribute [Authorize]
+@inject IUserData userData
+@inject IRequestData requestData
+@inject AuthenticationStateProvider authProvider
+@inject NavigationManager navManager
+
+<h1 class="page-heading text-uppercase mb-4">My Profile</h1>
+
+<div class="row justify-content-center detail-form">
+    <div class="row">
+        <div class="col-12 close-button-section">
+            <button class="btn btn-close" @onclick="ClosePage"></button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="form-layout mb-3">
+    <h2 class="my-submission-heading">My Account</h2>
+    <p class="my-submission-text">
+        <a href="MicrosoftIdentity/Account/EditProfile">
+            Edit My Profile
+        </a>
+    </p>
+</div>
+
+@if (approved?.Count > 0)
+{
+    <div class="form-layout mb-3">
+        <h2 class="my-submission-heading">Approved Requests</h2>
+        <p class="my-submission-text">These are your requests that are currently active.</p>
+
+        @foreach (var r in approved)
+        {
+            <hr class="my-submission-separator"/>
+            <div class="fw-bold request-detail-request">
+                @r.Request
+            </div>
+            <p class="my-submission-text">
+                @r.DateCreated.ToString("MM.dd.yyyy")
+            </p>
+            <p class="my-submission-text">
+                Total Votes: @r.UserVotes.Count
+            </p>
+            <p class="my-submission-text">
+                @r.Category.CategoryName
+            </p>
+            <p class="my-submission-text">
+                @r.Description
+            </p>
+            @if (r.RequestStatus is not null)
+            {
+                <div class="fw-bold request-detail-request">
+                    @r.RequestStatus.StatusName
+                </div>
+                <p class="my-submission-text">
+                    @((MarkupString)r.OwnerNotes)
+                </p>
+            }
+        }
+    </div>
+}
+
+@if (archived?.Count > 0)
+{
+    <div class="form-layout mb-3">
+        <h2 class="my-submission-heading">Archived Requests</h2>
+        <p class="my-submission-text">These are your requests that were active but did not recieve enough upvotes.</p>
+
+        @foreach (var r in archived)
+        {
+            <hr class="my-submission-separator"/>
+            <div class="fw-bold request-detail-request">
+                @r.Request
+            </div>
+            <p class="my-submission-text">
+                @r.DateCreated.ToString("MM.dd.yyyy")
+            </p>
+            <p class="my-submission-text">
+                Total Votes: @r.UserVotes.Count
+            </p>
+            <p class="my-submission-text">
+                @r.Category.CategoryName
+            </p>
+            <p class="my-submission-text">
+                @r.Description
+            </p>
+            @if (r.RequestStatus is not null)
+            {
+                <div class="fw-bold request-detail-request">
+                    @r.RequestStatus.StatusName
+                </div>
+                <p class="my-submission-text">
+                    @((MarkupString)r.OwnerNotes)
+                </p>
+            }
+        }
+    </div>
+}
+
+@if (pending?.Count > 0)
+{
+    <div class="form-layout mb-3">
+        <h2 class="my-submission-heading">Pending Requests</h2>
+        <p class="my-submission-text">These are your requests that are pending approval.</p>
+
+        @foreach (var r in pending)
+        {
+            <hr class="my-submission-separator"/>
+            <div class="fw-bold request-detail-request">
+                @r.Request
+            </div>
+            <p class="my-submission-text">
+                @r.DateCreated.ToString("MM.dd.yyyy")
+            </p>
+            <p class="my-submission-text">
+                Total Votes: @r.UserVotes.Count
+            </p>
+            <p class="my-submission-text">
+                @r.Category.CategoryName
+            </p>
+            <p class="my-submission-text">
+                @r.Description
+            </p>
+            @if (r.RequestStatus is not null)
+            {
+                <div class="fw-bold request-detail-request">
+                    @r.RequestStatus.StatusName
+                </div>
+                <p class="my-submission-text">
+                    @((MarkupString)r.OwnerNotes)
+                </p>
+            }
+        }
+    </div>
+}
+
+@if (rejected?.Count > 0)
+{
+    <div class="form-layout mb-3">
+        <h2 class="my-submission-heading">Rejected Requests</h2>
+        <p class="my-submission-text">These are your requests that were rejected.</p>
+
+        @foreach (var r in rejected)
+        {
+            <hr class="my-submission-separator"/>
+            <div class="fw-bold request-detail-request">
+                @r.Request
+            </div>
+            <p class="my-submission-text">
+                @r.DateCreated.ToString("MM.dd.yyyy")
+            </p>
+            <p class="my-submission-text">
+                Total Votes: @r.UserVotes.Count
+            </p>
+            <p class="my-submission-text">
+                @r.Category.CategoryName
+            </p>
+            <p class="my-submission-text">
+                @r.Description
+            </p>
+            @if (r.RequestStatus is not null)
+            {
+                <div class="fw-bold request-detail-request">
+                    @r.RequestStatus.StatusName
+                </div>
+                <p class="my-submission-text">
+                    @((MarkupString)r.OwnerNotes)
+                </p>
+            }
+        }
+    </div>
+}
+
+
+
+
