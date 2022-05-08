@@ -5,8 +5,8 @@
 @inject AuthenticationStateProvider authProvider
 @inject NavigationManager navManager
 
+<PageTitle>RequestWare-Profile</PageTitle>
 <h1 class="page-heading text-uppercase mb-4">My Profile</h1>
-
 <div class="row justify-content-center detail-form">
     <div class="row">
         <div class="col-12 close-button-section">
@@ -14,8 +14,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="form-layout mb-3">
     <h2 class="my-submission-heading">My Account</h2>
@@ -35,7 +33,7 @@
         @foreach (var r in approved)
         {
             <hr class="my-submission-separator"/>
-            <div class="fw-bold request-detail-request">
+            <div class="fw-bold my-submission-text request-detail-request">
                 @r.Request
             </div>
             <p class="my-submission-text">
@@ -52,7 +50,7 @@
             </p>
             @if (r.RequestStatus is not null)
             {
-                <div class="fw-bold request-detail-request">
+                <div class="fw-bold my-submission-text request-detail-request">
                     @r.RequestStatus.StatusName
                 </div>
                 <p class="my-submission-text">
@@ -72,7 +70,7 @@
         @foreach (var r in archived)
         {
             <hr class="my-submission-separator"/>
-            <div class="fw-bold request-detail-request">
+            <div class="fw-bold my-submission-text request-detail-request">
                 @r.Request
             </div>
             <p class="my-submission-text">
@@ -89,7 +87,7 @@
             </p>
             @if (r.RequestStatus is not null)
             {
-                <div class="fw-bold request-detail-request">
+                <div class="fw-bold my-submission-text request-detail-request">
                     @r.RequestStatus.StatusName
                 </div>
                 <p class="my-submission-text">
@@ -109,7 +107,7 @@
         @foreach (var r in pending)
         {
             <hr class="my-submission-separator"/>
-            <div class="fw-bold request-detail-request">
+            <div class="fw-bold my-submission-text request-detail-request">
                 @r.Request
             </div>
             <p class="my-submission-text">
@@ -126,7 +124,7 @@
             </p>
             @if (r.RequestStatus is not null)
             {
-                <div class="fw-bold request-detail-request">
+                <div class="fw-bold my-submission-text request-detail-request">
                     @r.RequestStatus.StatusName
                 </div>
                 <p class="my-submission-text">
@@ -146,7 +144,7 @@
         @foreach (var r in rejected)
         {
             <hr class="my-submission-separator"/>
-            <div class="fw-bold request-detail-request">
+            <div class="fw-bold my-submission-text request-detail-request">
                 @r.Request
             </div>
             <p class="my-submission-text">
@@ -163,7 +161,7 @@
             </p>
             @if (r.RequestStatus is not null)
             {
-                <div class="fw-bold request-detail-request">
+                <div class="fw-bold my-submission-text request-detail-request">
                     @r.RequestStatus.StatusName
                 </div>
                 <p class="my-submission-text">

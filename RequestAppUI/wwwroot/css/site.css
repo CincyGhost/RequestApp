@@ -267,6 +267,8 @@ a:hover, btn-link:hover {
     padding-right: 1rem;
 }
 
+
+
 .request-entry-status-completed {
     background-color: #B5D43A; /*TODO-Fix color to preference*/
     border: 1px #B5D43A solid;/*TODO-Fix color to preference*/
@@ -379,6 +381,8 @@ a:hover, btn-link:hover {
     display: flex;
     justify-content: center;
 }
+
+
 
 .btn-main {
     color: #FFFFFF;
@@ -625,6 +629,7 @@ a:hover, btn-link:hover {
     color: #A9A9A9;
     height: 2px;
     opacity: 1;
+    color: #191970;
 }
 
 .request-entry-bottom {
@@ -733,6 +738,7 @@ a:hover, btn-link:hover {
 
     .form-layout {
         padding: 1rem;
+        
     }
 
     .submission {
@@ -755,8 +761,9 @@ a:hover, btn-link:hover {
 
     .request-detail-request {
         font-size: 1rem;
-        color: #191970;
     }
+
+   
 
     .request-detail-text {
         padding-left: 12px;
