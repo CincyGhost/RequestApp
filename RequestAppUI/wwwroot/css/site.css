@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    background: url(../images/PageBackground.jpg) no-repeat center center fixed;
+    background: url(../images/abstract-background.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
 }
@@ -108,9 +108,9 @@ a:hover, btn-link:hover {
 }
 
 .btn-outline-light:hover {
-    color: #8A2BE2;/*Custom*/
+    color: #191970; /*Custom*/
     background-color: #FFFFFF;
-    border-color: #FFFFFF;
+    border-color: #191970;
 }
 
 .requests-count {
@@ -123,6 +123,7 @@ a:hover, btn-link:hover {
     background-color: #FFFFFF;
     border: 0px solid #DDDDDD;
     border-radius: 10px;
+    color: #191970;
 }
 
 .btn:focus,
@@ -153,6 +154,7 @@ a:hover, btn-link:hover {
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 1rem;
+    color: #191970;
 }
 
 .categories div {
@@ -172,6 +174,7 @@ a:hover, btn-link:hover {
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 1rem;
+    color: #191970;
 }
 
     .statuses div {
@@ -192,16 +195,17 @@ a:hover, btn-link:hover {
     border-radius: 20px;
     margin: 20px 0;
     box-shadow: rgba(0,0,0,0.35) 0 5px 15px;
+    cursor: pointer;
 }
 
 .request-entry-no-votes,
 .request-entry-voted,
 .request-entry-not-voted {
     text-align: center;
-    border-right: 3px #8A2BE2 solid;/*Custom*/
+    border-right: 3px #191970 solid; /*Custom*/
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    background-color: #8A2BE2;/*Custom*/
+    background-color: #191970; /*Custom*/
     color: #FFFFFF;
     display: flex;
     flex-flow: column;
@@ -214,19 +218,18 @@ a:hover, btn-link:hover {
 }
 
 .request-entry-no-votes {
-    background-color: #DDA0DD;/*Custom*/
+    background-color: #87CEFA; /*Custom*/
     color: #FFFFFF;
-    border-color: #DDDDDD;
 }
 
 .request-entry-voted {
-    background-color: #8A2BE2;/*Custom*/
+    background-color: #191970; /*Custom*/
     color: #FFFFFF;
 }
 
 .request-entry-not-voted {
     background-color: #FFFFFF;
-    color: #8A2BE2;/*Custom*/
+    color: #191970; /*Custom*/
 }
 
 .request-entry-text {
@@ -235,6 +238,7 @@ a:hover, btn-link:hover {
     padding: 10px;
     padding-left: 20px;
     background-color: #FFFFFF;
+    color: #191970;
 }
 
 .request-entry-text-title {
@@ -310,8 +314,12 @@ a:hover, btn-link:hover {
 
 .login-link {
     padding-left: 1rem;
-
+    color: #191970;
 }
+
+    .login-link:hover {
+        color: #87CEFA;
+    }
 
 .form-layout {
     background-color: #FFFFFF;
@@ -321,12 +329,12 @@ a:hover, btn-link:hover {
 
     .form-layout a {
         font-weight: 700;
-        color: #8A2BE2;/*Custom*/
+        color: #191970; /*Custom*/
     }
 
         .form-layout a:hover {
             font-weight: 700;
-            color: #8A2BE2;/*Custom*/
+            color: #191970; /*Custom*/
             text-decoration: underline;
         }
 
@@ -348,8 +356,8 @@ a:hover, btn-link:hover {
 }
 
 .radio-item-group label {
-    border-color: #8A2BE2;/*Custom*/
-    border-width: 1px;
+    /*border-color:*/ /*#191970;*//*Custom*/
+    border-width: 2px;
     padding: 0.3rem 1.5rem;
     border-radius: 10px;
     width: 100%;
@@ -357,10 +365,10 @@ a:hover, btn-link:hover {
 }
 
 .radio-item-group input[type="radio"]:checked + label {
-    background-color: #8A2BE2; /*Custom*/
+    background-color: #191970; /*Custom*/
     color: #FFFFFF;
     width: 100%;
-    border: 1px #8A2BE2 solid;
+    border: 1px #191970 solid;
 }
 
 .radio-item-group {
@@ -374,7 +382,7 @@ a:hover, btn-link:hover {
 
 .btn-main {
     color: #FFFFFF;
-    background-color: #8A2BE2; /*Custom*/
+    background-color: #191970; /*Custom*/
     padding-left: 2rem;
     padding-right: 2rem;
     font-family: 'Montserrat', sans-serif;
@@ -384,8 +392,8 @@ a:hover, btn-link:hover {
 }
 
     .btn-main:hover {
-        color: #8A2BE2; /*Custom*/
-        border-color: #8A2BE2; /*Custom*/
+        color: #191970; /*Custom*/
+        border-color: #191970; /*Custom*/
         background-color: #FFFFFF;
         border-width: 3px;
     }
@@ -404,7 +412,7 @@ a:hover, btn-link:hover {
 .request-detail-no-votes,
 .request-detail-not-voted,
 .request-detail-voted {
-    border: 3px solid #8A2BE2; /*Custom*/
+    border: 3px solid #191970;/**/ /*Custom*/
     text-align: center;
     line-height: 1rem;
     height: 100px;
@@ -412,22 +420,23 @@ a:hover, btn-link:hover {
     flex-direction: column;
     justify-content: center;
     font-size: 0.8rem;
+    border-radius: 15px;
 }
 
 .request-detail-no-votes {
-    background-color: #DDA0DD; /*Custom*/
+    background-color: #87CEFA; /*Custom*/
     color: #FFFFFF;
-    border-color: #DDDDDD;
 }
 
 .request-detail-voted {
-    background-color: #8A2BE2; /*Custom*/
+    background-color: #191970; /*Custom*/
     color: #FFFFFF;
+    border-color: #87CEFA;
 }
 
 .request-detail-not-voted {
     background-color: #FFFFFF;
-    color: #8A2BE2; /*Custom*/
+    color: #191970; /*Custom*/
 }
 
 .detail-upvote {
@@ -442,6 +451,15 @@ a:hover, btn-link:hover {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: #191970;
+}
+
+.input-section {
+    color: #191970;
+}
+
+.requests-count {
+    color: #191970;
 }
 
 .request-detail-text {
@@ -451,10 +469,16 @@ a:hover, btn-link:hover {
     padding-right: 10px;
     padding-bottom: 10px;
     padding-top: 0;
+    color: #191970;
 }
 
 .request-detail-request {
     font-size: 1.25rem;
+/*    color: #191970;
+*/}
+
+.request-detail-owner-notes {
+    color: #191970;
 }
 
 .request-detail-author {
@@ -504,6 +528,7 @@ a:hover, btn-link:hover {
 
 .request-detail-status {
     flex-grow: 1;
+    color: #191970;
 }
 
 .request-detail-owner-notes {
@@ -515,6 +540,7 @@ a:hover, btn-link:hover {
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
+    color: #191970;
 }
 
 .btn-approve,
@@ -580,17 +606,19 @@ a:hover, btn-link:hover {
 }
 
     .submission-edit-icon:hover {
-        color: #8A2BE2;/*Custom*/
+        color: #191970; /*Custom*/
     }
 
 .my-submission-heading {
-    color: #000000;
+    color: #191970;
     text-transform: uppercase;
 }
 
 .my-submission-text {
     margin-bottom: 0;
     padding-left: 1rem;
+    font-weight: 500;
+    color: #191970;
 }
 
 .my-submission-separator {
@@ -649,6 +677,8 @@ a:hover, btn-link:hover {
 .btn-status-dismissed:hover {
     color: #E9354C;
 }
+
+
 
 
 @media screen and (max-width: 575px) {
@@ -725,6 +755,7 @@ a:hover, btn-link:hover {
 
     .request-detail-request {
         font-size: 1rem;
+        color: #191970;
     }
 
     .request-detail-text {

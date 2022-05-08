@@ -22,10 +22,10 @@
                 <ValidationSummary />
                 <div class="input-section">
                     <label class="form-label fw-bold text-uppercase" for="request-text">Request</label>
-                    <div class="input-description">Request the development of any program.</div>
+                    <div class="input-description">Request the development of any solftware idea.</div>
                     <InputText class="form-control" id="request-text" @bind-Value="request.Request" />
                 </div>
-                <div>
+                <div class="input-section">
                     <label class="form-label fw-bold text-uppercase" for="category">Category</label>
                     <div class="input-description">Choose one category.</div>
                     <div class="col-lg-8">
@@ -46,7 +46,7 @@
                     <InputTextArea class="form-control" id="description" @bind-Value="request.Description" />
                 </div>
                 <div class="center-children">
-                    <button class="btn btn-main btn-lg text-uppercase" type="submit">Request</button>
+                    <button class="btn btn-main btn-lg text-uppercase" type="submit">Submit Request</button>
                 </div>
             </EditForm>
         }
