@@ -2,7 +2,6 @@ Request Ware Solutions
 
 .NET 6 Blazor Server WebApp for Request Ware Solutions. App allows account holders to request and upvote on software ideas or new features. Uses MongoDB and AzureAD B2C.
 
-KNOWN BUGS: Search box is not processing data properly
 HELP IS WELCOME:
 
 
