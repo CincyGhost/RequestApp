@@ -9,7 +9,6 @@ Request Ware Solutions
 
 ![fincreate](https://user-images.githubusercontent.com/95720340/167708152-d45ab2bd-3e3f-4e1d-889e-5ced220e0ed3.png)
 
-![Create](https://user-images.githubusercontent.com/95720340/167338494-fd1e7832-87ed-423a-965a-55fed525b220.png)
 1. Clone Repository
 2. cd RequestApp && cd RequestAppUI
 3. dontnet run
