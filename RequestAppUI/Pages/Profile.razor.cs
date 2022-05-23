@@ -18,7 +18,7 @@ namespace RequestAppUI.Pages;
          if (loggedInUser is not null && results is not null)
          {
              submissions = results.OrderByDescending(r => r.DateCreated).ToList();
-             approved = submissions.Where(r => r.ApprovedForRelease && r.Archived == false & r.Rejected == false).ToList(); //double&& or single&
+             approved = submissions.Where(r => r.ApprovedForRelease && r.Archived == false & r.Rejected == false).ToList();
              archived = submissions.Where(r => r.Archived && r.Rejected == false).ToList();
              pending = submissions.Where(r => r.ApprovedForRelease == false && r.Rejected == false).ToList();
              rejected = submissions.Where(r => r.Rejected).ToList();
