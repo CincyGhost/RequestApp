@@ -1,20 +1,20 @@
 ﻿<AuthorizeView Policy="Admin">
     <a class="login-link" href="/AdminApproval">
-        Admin
+        <button class="auth-btn btn auth-btn-light btn-sm text-uppercase">Admin</button>
     </a>
 </AuthorizeView>
 <AuthorizeView>
     <Authorized>
         <a class="login-link" href="/Profile">
-            Profile
+             <button class="auth-btn btn auth-btn-light btn-sm text-uppercase">Profile</button>
         </a>
         <a class="login-link" href="MicrosoftIdentity/Account/SignOut">
-            Logout
+            <button class="auth-btn btn auth-btn-light btn-sm text-uppercase">Logout</button>
         </a>
     </Authorized>
     <NotAuthorized>
         <a class="login-link" href="MicrosoftIdentity/Account/SignIn">
-            Login
+            <button class="auth-btn btn auth-btn-light btn-sm text-uppercase">Login</button>
         </a>
     </NotAuthorized>
 </AuthorizeView>

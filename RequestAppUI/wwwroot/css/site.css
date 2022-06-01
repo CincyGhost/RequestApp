@@ -98,6 +98,23 @@ a:hover, btn-link:hover {
     margin-bottom: 3rem;
 }
 
+.auth-btn {
+    font-family: 'Montserrat', sans-serif;
+    border-width: 3px;
+    border-radius: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 900;
+    border-color: #191970;
+    color: #191970
+}
+
+.auth-btn-light:hover {
+    color: #FFFFFF;
+    background-color: #191970;/*Custom*/
+    border-color: #191970;
+}
+
 .request-btn {
     font-family: 'Montserrat', sans-serif;
     border-width: 3px;
@@ -105,11 +122,13 @@ a:hover, btn-link:hover {
     padding-left: 2rem;
     padding-right: 2rem;
     font-weight: 900;
+    color: #191970;
+    border-color: #191970;
 }
 
 .btn-outline-light:hover {
-    color: #191970; /*Custom*/
-    background-color: #FFFFFF;
+    color: #FFFFFF; /*Custom*/
+    background-color: #191970;
     border-color: #191970;
 }
 
@@ -143,6 +162,7 @@ a:hover, btn-link:hover {
 
 .search-box {
     --bs-gutter-x: 3.5rem;
+    
 }
 
 .rounded-control {
@@ -155,6 +175,7 @@ a:hover, btn-link:hover {
     border-radius: 10px;
     padding: 1rem;
     color: #191970;
+    
 }
 
 .categories div {
@@ -196,7 +217,13 @@ a:hover, btn-link:hover {
     margin: 20px 0;
     box-shadow: rgba(0,0,0,0.35) 0 5px 15px;
     cursor: pointer;
+    border: solid #191970;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-top-width: 2px;
+    border-right-width: 2px;
 }
+
 
 .request-entry-no-votes,
 .request-entry-voted,
@@ -223,7 +250,7 @@ a:hover, btn-link:hover {
 }
 
 .request-entry-voted {
-    background-color: #191970; /*Custom*/
+    background-color: /*#6495ED;*/ #4682B4; /*Custom*/
     color: #FFFFFF;
 }
 
@@ -358,7 +385,6 @@ a:hover, btn-link:hover {
 }
 
 .radio-item-group label {
-    /*border-color:*/ /*#191970;*//*Custom*/
     border-width: 2px;
     padding: 0.3rem 1.5rem;
     border-radius: 10px;
