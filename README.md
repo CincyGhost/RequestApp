@@ -1,6 +1,6 @@
 Request Ware Solutions
 
-.NET 6 Blazor Server Application for Request Ware Solutions. App allows account holders to request and vote on software ideas or new features. Uses MongoDB for the database, Dapper micro-ORM for object mapping,  and AzureAD B2C for authentication.
+.NET 6 Blazor Server Application for Request Ware Solutions. App allows account holders to request and vote on software ideas or new features. Uses MongoDB for the database, and AzureAD B2C for authentication.
 
 
 
