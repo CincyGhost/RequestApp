@@ -1,6 +1,6 @@
 Request Ware Solutions
 
-.NET 6 Blazor Server Application for Request Ware Solutions. App allows account holders to request and vote on software ideas or new features. Uses non-relational MongoDB for the database with dependency injection, and AzureAD B2C for authentication.
+.NET 6 Blazor Server Application for software ideas. App allows account holders to request and vote on software ideas or new features. Uses non-relational MongoDB for the database with dependency injection, and AzureAD B2C for authentication.
 
 
 
