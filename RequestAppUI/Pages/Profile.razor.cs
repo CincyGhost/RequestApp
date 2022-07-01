@@ -12,7 +12,6 @@ namespace RequestAppUI.Pages;
      private List<RequestModel> rejected;
      protected async override Task OnInitializedAsync()
      {
-         // TODO - Replace with user lookup
          loggedInUser = await authProvider.GetUserFromAuth(userData);
          var results = await requestData.GetUsersRequests(loggedInUser.Id);
          if (loggedInUser is not null && results is not null)
