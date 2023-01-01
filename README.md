@@ -1,6 +1,6 @@
 
 
-.NET 6 Blazor Server Application for requesting and voting on software ideas.  Slightly altered version of Tim Corey's suggestion app.
+.NET 6 Blazor Server Application for requesting and voting on software ideas.  Inspired by Tim Corey's suggestion app.
 
 
 
